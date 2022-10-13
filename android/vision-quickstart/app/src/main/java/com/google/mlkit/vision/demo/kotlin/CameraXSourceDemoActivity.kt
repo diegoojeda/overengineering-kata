@@ -37,7 +37,7 @@ import com.google.mlkit.vision.camera.DetectionTaskCallback
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.InferenceInfoGraphic
 import com.google.mlkit.vision.demo.R
-import com.google.mlkit.vision.demo.kotlin.objectdetector.ObjectGraphic
+import com.google.mlkit.vision.demo.java.objectdetector.ObjectGraphic
 import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.demo.preference.SettingsActivity
 import com.google.mlkit.vision.demo.preference.SettingsActivity.LaunchSource
@@ -184,7 +184,7 @@ class CameraXSourceDemoActivity : AppCompatActivity(), CompoundButton.OnCheckedC
     graphicOverlay!!.postInvalidate()
     val error = "Failed to process. Error: " + e.localizedMessage
     Toast.makeText(
-        graphicOverlay!!.getContext(),
+        graphicOverlay!!.context,
         """
    $error
    Cause: ${e.cause}
